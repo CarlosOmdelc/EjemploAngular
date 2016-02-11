@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="ejemplo">
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+</head>
+    <body>
+      <h1>Hello World</h1>
+      <h2>Carlos</h2>
+      <div ng-controller="Mi2ctrl as vm">
+          <!--<h1>{{nombre}}</h1>-->
+          <!--<button ng-click="imprimir( true )">Activate Function</button>
+          <input type="text" ng-model="nombre">
+          -->
+          <h1>{{vm.nombre}}</h1>
+          <button ng-click="vm.imprimir( true )">Activate Function</button>
+          <input type="text" ng-model="vm.nombre">
+          <h2>{{vm.persona}}</h2>
+          <h1>{{vm.persona.edad}}</h1>
+
+          <div>
+            <p>Mi lista</p>
+            <p ng-repeat="num in vm.lista | orderBy: 'valor'">
+              {{ num.valor | currency }}
+            </p>
+          </div>
+
+      </div>
+      <script src="../bower_components/angular/angular.js"></script>
+      <script src="js/app.js"></script>
+</body>
+</html>
